@@ -73,8 +73,22 @@ function writeToFile(fileName, data) {
     return writeFileAsync(fileName, data);
 }
 
-// TODO: Create a function to initialize app
-function init() {}
+//Function to initialize app
+const init = async () => {
+    try {
+        const answers = await promptQuestions();
+
+        const fileContent = generateMd(answers);
+
+        await writeToFile('./README.md', fileContent);
+
+        console.log('Successful READme created');
+
+    } catch (err) {
+        console.error("Error. README file not created.");
+        console.log(err);
+    }
+}
 
 // Function call to initialize app
 init();
