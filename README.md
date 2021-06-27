@@ -5,8 +5,10 @@
   ## Description
   This application will assist in generating a README for any given project.
 
-  <img src='./images/screenshot_readme.png' alt='Image of terminal'>
+  ![Walkthrough video](./images/walkthrough.gif)(https://drive.google.com/file/d/1ox2ibGNv93o4PYrYpecacQY69XRPlUo_/view)
 
+  <img src='./images/screenshot_readme.png' alt='Image of terminal'>
+  
 
   ## Table of Contents
 
