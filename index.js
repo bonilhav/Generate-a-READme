@@ -31,7 +31,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What information does the user need to know about contributing to this reporsitory?',
+        message: 'What information does the user need to know about contributing to this repository?',
         name: 'contributors',
     },
     {
@@ -44,9 +44,10 @@ const questions = [
         message: 'What license should this project have?',
         name: 'license',
         choices: [
-            'MIT License',
-            'Apache License',
-            'GNU General Public License',
+            'MIT',
+            'Apache License 2.0',
+            'GNU General Public License v3',
+            'Mozilla Public License 2.0',
             'Unlicensed',
         ]
     },
@@ -60,7 +61,16 @@ const questions = [
         message: 'What is your email address?',
         name: 'email',
     },
-    
+/*     {
+        type: 'input',
+        message: 'What is your full name?',
+        name: 'fullname',
+    },
+    {
+        type: 'input',
+        message: "What is today's date?(use MM/DD/YYYY)",
+        name: 'date',
+    }, */
 ];
 
 const promptQuestions = () => {
@@ -81,6 +91,8 @@ const init = async () => {
         const fileContent = generateMd(answers);
 
         await writeToFile('./README.md', fileContent);
+
+        await writeToFile('LICENSE', '');
 
         console.log('Successful READme created');
 
